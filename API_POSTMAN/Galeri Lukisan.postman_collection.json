@@ -1,0 +1,192 @@
+{
+	"info": {
+		"_postman_id": "cb696fa3-806e-4799-8c81-ccec29b20b4a",
+		"name": "Galeri Lukisan",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "19702621"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"identifier\": \"member@gmail.com\",\r\n    \"password\": \"member123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:1337/api/auth/local",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "1337",
+							"path": [
+								"api",
+								"auth",
+								"local"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"member3\",\r\n    \"email\": \"member3@gmail.com\",\r\n    \"password\": \"member123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:1337/api/auth/local/register",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "1337",
+							"path": [
+								"api",
+								"auth",
+								"local",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ProfileCreateMe",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjgwNDE4MzI4LCJleHAiOjE2ODMwMTAzMjh9.zkPBbvrKrw2H9K1FeDhYDJ6p39s226ISEwiZjldmNCw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"fullName\": \"Member\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:1337/api/profile/me",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "1337",
+							"path": [
+								"api",
+								"profile",
+								"me"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ProfileGetMe",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "products",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjc4ODUwMTUyLCJleHAiOjE2ODE0NDIxNTJ9.ixhkyRodQKXUNpB2MRn2XYyWzZRU2x7DeaLE7WEYeEs",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://192.168.1.9:1337/api/products?populate=images",
+					"protocol": "http",
+					"host": [
+						"192",
+						"168",
+						"1",
+						"9"
+					],
+					"port": "1337",
+					"path": [
+						"api",
+						"products"
+					],
+					"query": [
+						{
+							"key": "populate",
+							"value": "images"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getByName",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://192.168.1.9:1337/api/products?populate=images&filters[pelukis][$contains]=Leonardo",
+					"protocol": "http",
+					"host": [
+						"192",
+						"168",
+						"1",
+						"9"
+					],
+					"port": "1337",
+					"path": [
+						"api",
+						"products"
+					],
+					"query": [
+						{
+							"key": "populate",
+							"value": "images"
+						},
+						{
+							"key": "filters[pelukis][$contains]",
+							"value": "Leonardo"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
