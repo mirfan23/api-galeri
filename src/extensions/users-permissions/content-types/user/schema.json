@@ -63,10 +63,6 @@
       "inversedBy": "users",
       "configurable": false
     },
-    "phone": {
-      "required": true,
-      "type": "integer"
-    },
     "order": {
       "type": "relation",
       "relation": "oneToOne",

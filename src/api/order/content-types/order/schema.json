@@ -22,12 +22,6 @@
       "target": "plugin::users-permissions.user",
       "inversedBy": "order"
     },
-    "product": {
-      "type": "relation",
-      "relation": "oneToOne",
-      "target": "api::product.product",
-      "inversedBy": "order"
-    },
     "create_at": {
       "type": "datetime",
       "required": true

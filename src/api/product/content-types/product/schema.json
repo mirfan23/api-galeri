@@ -12,43 +12,36 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "title": {
+    "name": {
       "type": "string",
-      "required": true
-    },
-    "description": {
-      "type": "richtext",
-      "required": true
-    },
-    "price": {
-      "type": "float",
       "required": true
     },
     "images": {
       "type": "media",
-      "multiple": false,
+      "multiple": true,
       "required": true,
       "allowedTypes": [
         "images"
       ]
     },
-    "order": {
-      "type": "relation",
-      "relation": "oneToOne",
-      "target": "api::order.order",
-      "mappedBy": "product"
-    },
     "pelukis": {
-      "type": "string",
-      "required": true
+      "type": "string"
     },
-    "colors": {
-      "type": "string",
-      "default": "-"
+    "description": {
+      "type": "text",
+      "required": true,
+      "default": "no description"
     },
-    "categories": {
-      "type": "string",
-      "default": "-"
+    "category": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::category.category",
+      "inversedBy": "products"
+    },
+    "price": {
+      "type": "decimal",
+      "required": true,
+      "default": 0
     }
   }
 }
