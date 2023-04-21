@@ -32,16 +32,19 @@
       "required": true,
       "default": "no description"
     },
-    "category": {
-      "type": "relation",
-      "relation": "manyToOne",
-      "target": "api::category.category",
-      "inversedBy": "products"
-    },
     "price": {
       "type": "decimal",
       "required": true,
       "default": 0
+    },
+    "ukuran": {
+      "type": "string",
+      "default": "tidak diketahui",
+      "required": true
+    },
+    "Tema": {
+      "type": "string",
+      "default": "-"
     }
   }
 }
